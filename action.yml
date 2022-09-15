@@ -1,0 +1,11 @@
+name: "Sync with CVS"
+description: "Sync your Git repository with a CVS repository"
+inputs:
+  repository-path:
+    description: "The path to the CVS repository (supposedly on a remote server)"
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.repository-path }}
