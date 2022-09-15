@@ -1,7 +1,7 @@
 FROM alpine:3.16
 
 RUN apk update && \
-  apk add git cvs sshpass
+  apk add bash git cvs sshpass
 
 RUN mkdir -p /sync-with-cvs/clone
 
