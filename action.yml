@@ -4,8 +4,12 @@ inputs:
   repository-path:
     description: "The path to the CVS repository (supposedly on a remote server)"
     required: true
+  ssh-password:
+    description: "The password to the account on the remote server, to be used by SSH"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"
-  args:
-    - ${{ inputs.repository-path }}
+  env:
+    SSHPASS: ${{ inputs.ssh-password }}
+    CVSROOT: ${{ inputs.repository-path }}
