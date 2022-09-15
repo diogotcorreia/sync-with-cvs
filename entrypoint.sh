@@ -5,4 +5,4 @@ MESSAGE=$(git log -1 --pretty="%B%n%nThis commit was imported from Git.%nOrigina
 pwd
 ls -la
 
-echo $MESSAGE
+echo "$MESSAGE"
