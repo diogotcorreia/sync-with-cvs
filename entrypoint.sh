@@ -5,8 +5,6 @@ clone_cvs() {
   # SSHPASS and CVSROOT are set on action.yml
   export CVS_RSH="/authenticated-ssh.sh"
   pushd /sync-with-cvs/clone
-  pwd
-  ssh -l ist199211 sigma.tecnico.ulisboa.pt "echo test"
   cvs checkout project
   popd
   
