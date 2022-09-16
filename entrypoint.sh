@@ -1,9 +1,12 @@
 #!/bin/bash
 set -e
 
-clone_cvs() {
+setup_cvs_env() {
   # SSHPASS and CVSROOT are set on action.yml
   export CVS_RSH="/authenticated-ssh.sh"
+}
+
+clone_cvs() {
   pushd /sync-with-cvs/clone
   cvs checkout project
   popd
@@ -17,4 +20,5 @@ ls -la
 
 echo "$MESSAGE"
 
+setup_cvs_env
 clone_cvs
